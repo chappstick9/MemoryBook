@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+My first nextjs app - Memorybook. Users create books, where they can share memories with other book co-owners.
