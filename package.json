@@ -12,7 +12,11 @@
     "prettier": "prettier --write './**/**/*.{ts,js}'",
     "prettier:check": "prettier --check './**/**/*.{ts,js}'",
     "docker:up": "docker-compose up -d",
-    "docker:down": "docker kill $(docker ps -q)"
+    "docker:down": "docker kill $(docker ps -q)",
+    "prisma:migrate:create": "prisma migrate dev --create-only",
+    "prisma:migrate:run": "prisma migrate dev",
+    "prisma:deploy": "primsa migrate deploy",
+    "prisma:reset": "prisma migrate reset"
   },
   "dependencies": {
     "@prisma/client": "^3.3.0",
