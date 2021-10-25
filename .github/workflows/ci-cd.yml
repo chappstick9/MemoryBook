@@ -43,5 +43,5 @@ jobs:
       - name: Set Prod Environment
         if: github.base_ref == 'main'
         run: echo "ENVIRONMENT=prod" >> $GITHUB_ENV
-      - name: Push to Heroku Public API
+      - name: Push to Heroku
         run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/memorybook-${{ env.ENVIRONMENT }}.git $GITHUB_SHA:master
