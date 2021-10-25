@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>{SITE_TITLE}</title>
       </Head>
-      <div>Hello World</div>
+      <div>Hello World! This is MemoryBook</div>
     </>
   )
 }
