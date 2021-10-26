@@ -17,7 +17,8 @@
     "prisma:migrate:create": "prisma migrate dev --create-only",
     "prisma:migrate:run": "prisma migrate dev",
     "prisma:deploy": "primsa migrate deploy",
-    "prisma:reset": "prisma migrate reset"
+    "prisma:reset": "prisma migrate reset",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
     "@prisma/client": "^3.3.0",
