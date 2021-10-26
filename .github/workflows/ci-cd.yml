@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    types: [opened, reopened, closed, synchronize]
+    types: [opened, reopened, synchronize]
   workflow_dispatch:
 
 jobs:
@@ -26,22 +26,3 @@ jobs:
       - run: npm run lint
       - run: npm run prettier:check
       - run: npm run build
-
-  deploy-heroku:
-    name: Deploy Heroku
-    runs-on: ubuntu-latest
-    needs: run-checks
-    if: github.event.pull_request.merged == true && (github.base_ref == 'develop' || github.base_ref == 'main')
-    env:
-      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Set Develop Environment
-        if: github.base_ref == 'develop'
-        run: echo "ENVIRONMENT=develop" >> $GITHUB_ENV
-      - name: Set Prod Environment
-        if: github.base_ref == 'main'
-        run: echo "ENVIRONMENT=prod" >> $GITHUB_ENV
-      - name: Push to Heroku
-        run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/memorybook-${{ env.ENVIRONMENT }}.git $GITHUB_SHA:main
