@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Head>
         <title>{SITE_TITLE}</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <div>Hello World! This is MemoryBook</div>
     </>
