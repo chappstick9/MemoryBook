@@ -21,6 +21,7 @@
     "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^1.6.1",
     "@mui/material": "^5.0.5",
     "@prisma/client": "^3.3.0",
     "eslint-config-prettier": "^8.3.0",
